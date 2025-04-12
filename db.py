@@ -6,7 +6,9 @@ def get_connection():
         host=os.getenv("MYSQL_HOST", "localhost"),
         user=os.getenv("MYSQL_USER", "root"),
         password=os.getenv("MYSQL_PASSWORD", ""),
-        database=os.getenv("MYSQL_DATABASE", "testdb")
+        database=os.getenv("MYSQL_DATABASE", "testdb"),
+        charset="utf8mb4",  # Ensure utf8mb4 character set is used
+        collation="utf8mb4_unicode_ci"  # Explicitly use a supported collation
     )
 
 
